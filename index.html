@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>San Valentín ❤️</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Botón de audio -->
+  <button id="audio-toggle" aria-label="Audio">
+    🔊
+  </button>
+
+  <main id="app">
+
+    <!-- Bienvenida -->
+    <section class="screen active" data-screen="welcome">
+      <h1>Nayeli</h1>
+      <p>Todo lo que somos hoy está hecho de pequeños momentos que elegimos vivir juntos.</p>
+      <button class="primary-btn" data-action="next">Comenzar</button>
+    </section>
+
+    <!-- Introducción -->
+    <section class="screen" data-screen="intro">
+      <p>
+        Esta no es solo una historia.<br>
+        Es un recorrido por lo que hemos construido juntos.
+      </p>
+      <button class="primary-btn" data-action="next">Continuar</button>
+    </section>
+
+    <!-- Timeline -->
+    <section class="screen" data-screen="timeline">
+      <h2>Nuestros momentos</h2>
+      <ul class="timeline">
+        <li>Inicio</li>
+        <li>Risa</li>
+        <li>Apoyo</li>
+        <li>Complicidad</li>
+        <li>Presente</li>
+        <li>Futuro</li>
+      </ul>
+      <button class="primary-btn" data-action="next">Empezar</button>
+    </section>
+
+    <!-- Recuerdo (pantalla reutilizable) -->
+    <section class="screen" data-screen="memory">
+      <h2 id="memory-title"></h2>
+
+      <div id="memory-text">
+        <p id="memory-intro"></p>
+        <div id="memory-narrative"></div>
+      </div>
+
+      <div id="memory-interaction"></div>
+
+      <button
+        class="primary-btn hidden"
+        id="memory-next"
+        data-action="next">
+        Continuar
+      </button>
+    </section>
+
+    <!-- Video Final -->
+    <section class="screen" data-screen="finalVideo">
+      <video
+        id="final-video"
+        playsinline
+        preload="auto"
+        controls
+        muted
+        style="max-width: 80%; border-radius: 16px;"
+      >
+        <source src="assets/video/final.mp4" type="video/mp4">
+      </video>
+
+      <!-- Controles personalizados -->
+      <div class="video-controls">
+        <button id="video-play" class="secondary-btn">▶️ Play</button>
+        <button id="video-pause" class="secondary-btn">⏸ Pausa</button>
+      </div>
+
+      <button
+        class="primary-btn hidden"
+        id="final-video-continue"
+        data-action="next">
+        Continuar
+      </button>
+    </section>
+
+
+    <!-- Cierre -->
+    <section class="screen" data-screen="ending">
+      <h2>Gracias por estar aquí</h2>
+      <p>
+        Esto no termina hoy.<br>
+        Solo cambia de forma.
+      </p>
+      <button class="primary-btn" data-action="restart">Volver a empezar</button>
+    </section>
+
+  </main>
+
+  <!-- Audio -->
+  <audio id="background-audio" loop>
+    <source src="assets/audio/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script type="module" src="js/state.js"></script>
+  <script type="module" src="js/audio.js"></script>
+  <script type="module" src="js/interactions.js"></script>
+  <script type="module" src="js/app.js"></script>
+
+
+</body>
+</html>
